@@ -10,7 +10,7 @@ export class HttpPostService {
   constructor(private http: Http) { }
 
   storeData(crs: ICourseModel[]) {
-    const headers = new Headers({'Content/type':'application/json'});
+    const headers = new Headers({'Content-Type': 'application/json'});
     return this.http.post('https://acadgild-ng-http.firebaseio.com/data.json', crs, {headers: headers}).catch(
       (error: Response) => {
         return Observable.throw(error);
